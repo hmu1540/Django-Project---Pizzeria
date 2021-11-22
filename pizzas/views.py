@@ -7,8 +7,9 @@ def index(request):
     return render(request, 'pizzas/index.html')
 
 def pizzas(request):
-
-    return render(request, 'pizzas/pizzas.html')
+    pizzas = Pizza.objects.all()
+    context = {'pizzas': pizzas}
+    return render(request, 'pizzas/pizzas.html', context)
 
 def pizza(request, pizza_id):
     pizza = Pizza.objects.get(id = pizza_id)

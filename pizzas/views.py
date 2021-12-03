@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+
+from pizzas.forms import PizzaForm
 from .models import Pizza, Topping
 
 # Create your views here.
@@ -17,3 +19,13 @@ def pizza(request, pizza_id):
     context = {'pizza': pizza, 'toppings': toppings}
 
     return render(request, 'pizzas/pizza.html', context)
+
+def comment(request, pizza_id):
+    if request != 'POST':
+        form = PizzaForm()
+    else:
+        form = PizzaForm(data = request.POST)
+        if form.is_valid():
+            comment = form.save()
+            return redirect('pizzas:pizzas')
+            

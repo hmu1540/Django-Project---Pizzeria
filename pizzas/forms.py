@@ -1,9 +1,11 @@
 from django import forms
 from django.forms import fields
-from .models import Pizza
+from .models import Comment
 
-class PizzaForm(forms.ModelForm):
+class CommentForm(forms.ModelForm):
     class Meta:
-        model = Pizza
-        fields = ['name']
-        labels = {'name': ''}
+        model = Comment
+        fields = ['name', 'pizza']
+        labels = {'name': ''} #??????????????????????????????????
+
+        widgets = {'name': forms.Textarea(attrs={'cols': 40})}  # custom fields

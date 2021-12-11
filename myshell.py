@@ -17,4 +17,8 @@ pizza = Pizza.objects.get(id=1)
 
 toppings = pizza.topping_set.all()
 for topping in toppings:
-    print(topping)
+    print(topping.id, topping)
+topping = Topping.objects.get(id=4)
+
+# pizza = topping.pizza_set.all()
+# print(pizza)

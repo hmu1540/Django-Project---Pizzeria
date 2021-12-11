@@ -1,8 +1,12 @@
 {% extends 'pizzas/base.html' %}
+{% load bootstrap4 %}
 
 
 {% block content %}
 <p>Pizza: {{ pizza }}</p>
+<img src="{{pizza.image.url}}" class="img-thumbnail" style="max-height: 200px;">
+<br><br>
+
 <p>Toppings</p>
 
 <ul>

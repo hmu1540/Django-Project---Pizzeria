@@ -25,7 +25,7 @@ def comment(request, pizza_id):
     if request.method != 'POST':
         form = CommentForm()
     else:
-        form = CommentForm(data=request.POST)
+        form = CommentForm(request.POST)
         if form.is_valid():
             print('form is valid')
             new_comment = form.save(commit=False)

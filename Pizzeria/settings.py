@@ -24,7 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--6f9x^pzujq=bo2_=yor%8d7b&36e#z4so@0pn=y_^9lt5su5@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = []
 
@@ -131,7 +132,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # MEDIA_ROOT  = 'images'
 # MEDIA_URL = '/images/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
